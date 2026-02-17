@@ -84,7 +84,9 @@ test.only("Two Element with same Name",async({page})=>{
     //Fail
     //  await page.locator("//*[text()='Login']").click();
     // await page.getByText('Login').first().click();
-    await page.getByRole('link', { name: 'Login', exact: true }).click();
+    await page.getByRole('link', { name: 'Login' }).first().click();
+
+    // await page.getByRole('link', { name: 'Login', exact: true }).click();
 // I prefer role-based or attribute-based locators to uniquely identify elements.
 // I first use accessibility roles like button or link.
 // If multiple elements share the same role and name, I refine the locator using stable attributes such as data-testid, class, aria attributes, or parent context.
