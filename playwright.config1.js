@@ -32,7 +32,7 @@ projects: [
     name: 'webkit',
     use: {
       browserName: 'webkit',   // Safari = WebKit
-      headless: false,
+      headless: true,
       screenshot: 'only-on-failure',
       trace: 'on',
       video: 'retain-on-failure',
