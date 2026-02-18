@@ -74,7 +74,7 @@ test(`Webst Client App login ${data.productName}`, async ({ page }) => {
 
 
 
-test.only('Webst Client App login using fixture', async ({ page, testDatafixture }) => {
+test('Webst Client App login using fixture', async ({ page, testDatafixture }) => {
 
   const poManager = new POManager(page);
 

@@ -1,4 +1,6 @@
 const {test,expect} =require('@playwright/test');
+test.skip(process.env.CI, 'Blocked in CI environment');
+
 
 test('Enter the username and password',async({page})=>{
     const username= page.locator('#username');
@@ -79,7 +81,7 @@ test("InnerText vs TextConten",async({page})=>{
 }
 );
 
-test.only("Two Element with same Name",async({page})=>{
+test("Two Element with same Name",async({page})=>{
     await page.goto("https://www.flipkart.com/");
     //Fail
     //  await page.locator("//*[text()='Login']").click();

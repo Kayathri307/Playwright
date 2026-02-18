@@ -1,5 +1,5 @@
 // @ts-check
-const { defineConfig, devices } = require('@playwright/test');
+const { defineConfig } = require('@playwright/test');
 
 /**
  * @see https://playwright.dev/docs/test-configuration
@@ -13,16 +13,21 @@ module.exports = defineConfig({
     timeout: 40 * 1000,
   },
 
-  // reporter: 'html',
-   reporter: [
-    ['html'],
+  // ✅ Reports
+  reporter: [
+    ['html', { open: 'never' }],
     ['allure-playwright'],
   ],
 
+  // ✅ CI-safe retries & workers
+  retries: process.env.CI ? 2 : 0,
+  workers: process.env.CI ? 2 : undefined,
+
+  // ✅ Single use block
   use: {
     browserName: 'chromium',
     headless: true,
     screenshot: 'only-on-failure',
-    trace:'on',
-  }
+    trace: 'on-first-retry',
+  },
 });

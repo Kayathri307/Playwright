@@ -72,7 +72,7 @@ await expect(suggestions.first()).toBeVisible();
 
 });
 
-test.only("Api response", async ({ page }) => {
+test("Api response", async ({ page }) => {
   await page.goto('https://www.flipkart.com/');
   page.on('request',  r=>console.log('Request: ' + r.url()));
   page.on('response',  r=>console.log('Response: ' + r.url(), r.status()));
