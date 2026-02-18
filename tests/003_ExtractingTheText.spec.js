@@ -52,7 +52,7 @@ await products.first().waitFor();
     
 });
 
-test("InnerText vs TextContent",async({page})=>{
+test("InnerText vs TextConten",async({page})=>{
     await page.goto("https://www.flipkart.com/");
     
     
